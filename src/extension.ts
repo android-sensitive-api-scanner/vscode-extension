@@ -60,7 +60,7 @@ export function activate(context: vscode.ExtensionContext) {
 						console.log("User canceled the long running operation");
 					});
 					progress.report({message: "Scanning... Please wait a moment."});
-					return shell.exec(`java -jar ${jarPath} -json ${apiFile} --output-dir ${outputDir} ${apkPath}`);
+					return shell.exec(`java -jar ${jarPath} --apis ${apiFile} --output ${outputDir} ${apkPath}`);
 				});
 
 				const outputArr = output.split("\n").filter((e) => {
